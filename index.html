@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Hub - Discover the Best AI Applications</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+        
+        .tool-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-btn {
+            transition: all 0.2s ease;
+        }
+        
+        /* This is the style for an active category button */
+        .category-btn.active {
+            background-color: #4f46e5; /* Tailwind indigo-600 or similar */
+            color: white;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+        }
+        
+        .tool-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #a5b4fc;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #818cf8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="gradient-bg text-white">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-2">AI Tools Hub</h1>
+                    <p class="text-indigo-100">Discover the best AI applications for every need</p>
+                </div>
+                <div class="w-full md:w-auto">
+                    <div class="relative">
+                        <input type="text" placeholder="Search AI tools..." class="search-box w-full md:w-64 px-4 py-3 rounded-full bg-white bg-opacity-20 text-white placeholder-indigo-200 focus:bg-opacity-30">
+                        <button class="absolute right-3 top-3 text-indigo-200">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Categories Navigation -->
+        <div class="mb-8 overflow-x-auto">
+            <div class="flex space-x-2 pb-2">
+                <!-- "All Tools" starts active. The .active class from CSS will style it. -->
+                <!-- Removed specific bg-indigo-100 text-indigo-800 to let .active CSS rule apply fully -->
+                <button class="category-btn active px-4 py-2 rounded-full font-medium whitespace-nowrap">All Tools</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium whitespace-nowrap">General AI</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium whitespace-nowrap">Text & Writing</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium whitespace-nowrap">Image Generation</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium whitespace-nowrap">Video & Animation</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium whitespace-nowrap">Voice & Audio</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium whitespace-nowrap">Coding</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium whitespace-nowrap">Productivity</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium whitespace-nowrap">Education</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium whitespace-nowrap">Design</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium whitespace-nowrap">Specialized</button>
+            </div>
+        </div>
+
+        <!-- Featured Section -->
+        <section class="mb-12 featured-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Featured AI Tools</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Featured Card 1 -->
+                <div class="tool-card bg-white">
+                    <a href="https://chat.openai.com" target="_blank" class="block">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <img src="https://logo.clearbit.com/openai.com" alt="ChatGPT" class="tool-logo rounded-full mr-3">
+                                <h3 class="text-xl font-semibold text-gray-800">ChatGPT</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">Advanced conversational AI by OpenAI that can understand and generate human-like text.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">General AI</span>
+                                <span class="text-indigo-600 font-medium">Visit <i class="fas fa-external-link-alt ml-1"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Featured Card 2 -->
+                <div class="tool-card bg-white">
+                    <a href="https://www.midjourney.com" target="_blank" class="block">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <img src="https://logo.clearbit.com/midjourney.com" alt="Midjourney" class="tool-logo rounded-full mr-3">
+                                <h3 class="text-xl font-semibold text-gray-800">Midjourney</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">AI-powered image generation tool that creates stunning visuals from text prompts.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Image Gen</span>
+                                <span class="text-indigo-600 font-medium">Visit <i class="fas fa-external-link-alt ml-1"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Featured Card 3 -->
+                <div class="tool-card bg-white">
+                    <a href="https://github.com/features/copilot" target="_blank" class="block">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <img src="https://logo.clearbit.com/github.com" alt="GitHub Copilot" class="tool-logo rounded-full mr-3">
+                                <h3 class="text-xl font-semibold text-gray-800">GitHub Copilot</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">AI pair programmer that suggests code and entire functions in real-time.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Coding</span>
+                                <span class="text-indigo-600 font-medium">Visit <i class="fas fa-external-link-alt ml-1"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Tools Section Container -->
+        <section id="all-tools-container">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">All AI Tools</h2>
+            
+            <!-- General AI Assistants -->
+            <div class="mb-10 tool-category-block">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                    <i class="fas fa-robot text-indigo-500 mr-2"></i> General AI Assistants
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <a href="https://chat.openai.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/openai.com" alt="ChatGPT" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">ChatGPT</h4>
+                            <p class="text-sm text-gray-500">OpenAI</p>
+                        </div>
+                    </a>
+                    <a href="https://claude.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/anthropic.com" alt="Claude" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Claude</h4>
+                            <p class="text-sm text-gray-500">Anthropic</p>
+                        </div>
+                    </a>
+                    <a href="https://gemini.google.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/google.com" alt="Gemini" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Gemini</h4>
+                            <p class="text-sm text-gray-500">Google</p>
+                        </div>
+                    </a>
+                    <a href="https://copilot.microsoft.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/microsoft.com" alt="Copilot" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Copilot</h4>
+                            <p class="text-sm text-gray-500">Microsoft</p>
+                        </div>
+                    </a>
+                    <a href="https://www.perplexity.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/perplexity.ai" alt="Perplexity AI" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Perplexity AI</h4>
+                            <p class="text-sm text-gray-500">Search & Answers</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Text Generation & Writing -->
+            <div class="mb-10 tool-category-block">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                    <i class="fas fa-pen-fancy text-green-500 mr-2"></i> Text Generation & Writing
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <a href="https://www.jasper.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/jasper.ai" alt="Jasper AI" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Jasper AI</h4>
+                            <p class="text-sm text-gray-500">Content Creation</p>
+                        </div>
+                    </a>
+                    <a href="https://www.copy.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/copy.ai" alt="Copy.ai" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Copy.ai</h4>
+                            <p class="text-sm text-gray-500">Marketing Copy</p>
+                        </div>
+                    </a>
+                    <a href="https://writesonic.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/writesonic.com" alt="Writesonic" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Writesonic</h4>
+                            <p class="text-sm text-gray-500">AI Writer</p>
+                        </div>
+                    </a>
+                    <a href="https://www.sudowrite.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/sudowrite.com" alt="Sudowrite" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Sudowrite</h4>
+                            <p class="text-sm text-gray-500">Creative Writing</p>
+                        </div>
+                    </a>
+                    <a href="https://rytr.me" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/rytr.me" alt="Rytr" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Rytr</h4>
+                            <p class="text-sm text-gray-500">Affordable AI Writer</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Image Generation -->
+            <div class="mb-10 tool-category-block">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                    <i class="fas fa-image text-purple-500 mr-2"></i> Image Generation
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <a href="https://openai.com/dall-e" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/openai.com" alt="DALL·E" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">DALL·E</h4>
+                            <p class="text-sm text-gray-500">OpenAI</p>
+                        </div>
+                    </a>
+                    <a href="https://www.midjourney.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/midjourney.com" alt="Midjourney" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Midjourney</h4>
+                            <p class="text-sm text-gray-500">Art Generation</p>
+                        </div>
+                    </a>
+                    <a href="https://stablediffusionweb.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/stability.ai" alt="Stable Diffusion" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Stable Diffusion</h4>
+                            <p class="text-sm text-gray-500">Open Source</p>
+                        </div>
+                    </a>
+                    <a href="https://www.adobe.com/sensei/generative-ai/firefly.html" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/adobe.com" alt="Adobe Firefly" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Adobe Firefly</h4>
+                            <p class="text-sm text-gray-500">Adobe</p>
+                        </div>
+                    </a>
+                    <a href="https://www.canva.com/magic-design/" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/canva.com" alt="Canva Magic Design" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Canva Magic Design</h4>
+                            <p class="text-sm text-gray-500">Design Templates</p>
+                        </div>
+                    </a>
+                    <a href="https://remini.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/remini.ai" alt="Remini" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Remini</h4>
+                            <p class="text-sm text-gray-500">Photo Enhancement</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Video & Animation -->
+            <div class="mb-10 tool-category-block">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                    <i class="fas fa-video text-red-500 mr-2"></i> Video & Animation
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <a href="https://openai.com/sora" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/openai.com" alt="Sora" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Sora</h4>
+                            <p class="text-sm text-gray-500">OpenAI</p>
+                        </div>
+                    </a>
+                    <a href="https://runwayml.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/runwayml.com" alt="Runway ML" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Runway ML</h4>
+                            <p class="text-sm text-gray-500">Video Editing</p>
+                        </div>
+                    </a>
+                    <a href="https://pika.art" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/pika.art" alt="Pika Labs" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Pika Labs</h4>
+                            <p class="text-sm text-gray-500">Video Generation</p>
+                        </div>
+                    </a>
+                    <a href="https://www.synthesia.io" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/synthesia.io" alt="Synthesia" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Synthesia</h4>
+                            <p class="text-sm text-gray-500">AI Avatars</p>
+                        </div>
+                    </a>
+                    <a href="https://www.heygen.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/heygen.com" alt="HeyGen" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">HeyGen</h4>
+                            <p class="text-sm text-gray-500">Video Creation</p>
+                        </div>
+                    </a>
+                    <a href="https://animoto.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/animoto.com" alt="Animoto" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Animoto</h4>
+                            <p class="text-sm text-gray-500">Video Maker</p>
+                        </div>
+                    </a>
+                    <a href="https://lumen5.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/lumen5.com" alt="Lumen5" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Lumen5</h4>
+                            <p class="text-sm text-gray-500">Video Creation</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Voice, Speech & Audio -->
+            <div class="mb-10 tool-category-block">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                    <i class="fas fa-microphone text-blue-500 mr-2"></i> Voice, Speech & Audio
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <a href="https://elevenlabs.io" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/elevenlabs.io" alt="ElevenLabs" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">ElevenLabs</h4>
+                            <p class="text-sm text-gray-500">Voice Synthesis</p>
+                        </div>
+                    </a>
+                    <a href="https://murf.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/murf.ai" alt="Murf AI" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Murf AI</h4>
+                            <p class="text-sm text-gray-500">Text-to-Speech</p>
+                        </div>
+                    </a>
+                    <a href="https://www.descript.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/descript.com" alt="Descript" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Descript</h4>
+                            <p class="text-sm text-gray-500">Audio Editing</p>
+                        </div>
+                    </a>
+                    <a href="https://www.resemble.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/resemble.ai" alt="Resemble.ai" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Resemble.ai</h4>
+                            <p class="text-sm text-gray-500">Voice Cloning</p>
+                        </div>
+                    </a>
+                    <a href="https://voice.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/voice.ai" alt="Voice.ai" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Voice.ai</h4>
+                            <p class="text-sm text-gray-500">Voice Changer</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Coding & Developer Tools -->
+            <div class="mb-10 tool-category-block">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                    <i class="fas fa-code text-yellow-500 mr-2"></i> Coding & Developer Tools
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <a href="https://github.com/features/copilot" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/github.com" alt="GitHub Copilot" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">GitHub Copilot</h4>
+                            <p class="text-sm text-gray-500">AI Pair Programmer</p>
+                        </div>
+                    </a>
+                    <a href="https://www.tabnine.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/tabnine.com" alt="Tabnine" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Tabnine</h4>
+                            <p class="text-sm text-gray-500">Code Completion</p>
+                        </div>
+                    </a>
+                    <a href="https://codeium.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/codeium.com" alt="Codeium" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Codeium</h4>
+                            <p class="text-sm text-gray-500">Free AI Coding</p>
+                        </div>
+                    </a>
+                    <a href="https://replit.com/site/ghostwriter" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/replit.com" alt="Replit Ghostwriter" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Replit Ghostwriter</h4>
+                            <p class="text-sm text-gray-500">Cloud Coding</p>
+                        </div>
+                    </a>
+                    <a href="https://aws.amazon.com/codewhisperer/" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/amazon.com" alt="Amazon CodeWhisperer" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Amazon CodeWhisperer</h4>
+                            <p class="text-sm text-gray-500">AWS Coding</p>
+                        </div>
+                    </a>
+                    <a href="https://mutable.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/mutable.ai" alt="Mutable.ai" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Mutable.ai</h4>
+                            <p class="text-sm text-gray-500">Code Generation</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Productivity & Business -->
+            <div class="mb-10 tool-category-block">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                    <i class="fas fa-briefcase text-teal-500 mr-2"></i> Productivity & Business
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <a href="https://www.notion.so/product/ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/notion.so" alt="Notion AI" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Notion AI</h4>
+                            <p class="text-sm text-gray-500">Workspace Assistant</p>
+                        </div>
+                    </a>
+                    <a href="https://clickup.com/ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/clickup.com" alt="ClickUp AI" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">ClickUp AI</h4>
+                            <p class="text-sm text-gray-500">Project Management</p>
+                        </div>
+                    </a>
+                    <a href="https://trello.com/ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/trello.com" alt="Trello AI" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Trello AI</h4>
+                            <p class="text-sm text-gray-500">Task Automation</p>
+                        </div>
+                    </a>
+                    <a href="https://airtable.com/ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/airtable.com" alt="Airtable AI" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Airtable AI</h4>
+                            <p class="text-sm text-gray-500">Database Assistant</p>
+                        </div>
+                    </a>
+                    <a href="https://tome.app" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/tome.app" alt="Tome AI" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Tome AI</h4>
+                            <p class="text-sm text-gray-500">Presentation Maker</p>
+                        </div>
+                    </a>
+                    <a href="https://www.getmagical.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/getmagical.com" alt="Magical" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Magical</h4>
+                            <p class="text-sm text-gray-500">Workflow Automation</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Education & Learning -->
+            <div class="mb-10 tool-category-block">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                    <i class="fas fa-graduation-cap text-orange-500 mr-2"></i> Education & Learning
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <a href="https://www.khanacademy.org/khan-labs" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/khanacademy.org" alt="Khanmigo" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Khanmigo</h4>
+                            <p class="text-sm text-gray-500">Learning Assistant</p>
+                        </div>
+                    </a>
+                    <a href="https://quillbot.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/quillbot.com" alt="QuillBot" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">QuillBot</h4>
+                            <p class="text-sm text-gray-500">Writing Assistant</p>
+                        </div>
+                    </a>
+                    <a href="https://www.grammarly.com/grammarlygo" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/grammarly.com" alt="GrammarlyGO" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">GrammarlyGO</h4>
+                            <p class="text-sm text-gray-500">Writing Enhancement</p>
+                        </div>
+                    </a>
+                    <a href="https://socratic.org" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/socratic.org" alt="Socratic" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Socratic</h4>
+                            <p class="text-sm text-gray-500">Homework Helper</p>
+                        </div>
+                    </a>
+                    <a href="https://elicit.org" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/elicit.org" alt="Elicit" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Elicit</h4>
+                            <p class="text-sm text-gray-500">Research Assistant</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- AI Search & Research -->
+            <div class="mb-10 tool-category-block">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                    <i class="fas fa-search text-indigo-500 mr-2"></i> AI Search & Research
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <a href="https://www.perplexity.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/perplexity.ai" alt="Perplexity AI" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Perplexity AI</h4>
+                            <p class="text-sm text-gray-500">Answer Engine</p>
+                        </div>
+                    </a>
+                    <a href="https://you.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/you.com" alt="You.com" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">You.com</h4>
+                            <p class="text-sm text-gray-500">AI Search Engine</p>
+                        </div>
+                    </a>
+                    <a href="https://scite.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/scite.ai" alt="Scite.ai" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Scite.ai</h4>
+                            <p class="text-sm text-gray-500">Research Assistant</p>
+                        </div>
+                    </a>
+                    <a href="https://consensus.app" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/consensus.app" alt="Consensus.app" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Consensus.app</h4>
+                            <p class="text-sm text-gray-500">Evidence-Based Answers</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Design & Branding -->
+            <div class="mb-10 tool-category-block">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                    <i class="fas fa-palette text-pink-500 mr-2"></i> Design & Branding
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <a href="https://www.figma.com/ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/figma.com" alt="Figma AI" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Figma AI</h4>
+                            <p class="text-sm text-gray-500">Design Assistant</p>
+                        </div>
+                    </a>
+                    <a href="https://www.khroma.co" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/khroma.co" alt="Khroma" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Khroma</h4>
+                            <p class="text-sm text-gray-500">Color Tool</p>
+                        </div>
+                    </a>
+                    <a href="https://looka.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/looka.com" alt="Looka" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Looka</h4>
+                            <p class="text-sm text-gray-500">Logo Maker</p>
+                        </div>
+                    </a>
+                    <a href="https://designs.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                        <img src="https://logo.clearbit.com/designs.ai" alt="Designs.ai" class="tool-logo rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-800">Designs.ai</h4>
+                            <p class="text-sm text-gray-500">Design Suite</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Specialized Tools -->
+            <div class="mb-10 tool-category-block">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+                    <i class="fas fa-star text-yellow-400 mr-2"></i> Specialized Tools
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"> <!-- This grid is for sub-category blocks -->
+                    <!-- AI Website Builders -->
+                    <div class="col-span-full mb-4">
+                        <h4 class="font-medium text-gray-700 mb-2">AI Website Builders</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <a href="https://www.wix.com/adi" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/wix.com" alt="Wix ADI" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Wix ADI</h4>
+                                    <p class="text-sm text-gray-500">Website Builder</p>
+                                </div>
+                            </a>
+                            <a href="https://www.framer.com/ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/framer.com" alt="Framer AI" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Framer AI</h4>
+                                    <p class="text-sm text-gray-500">Design & Code</p>
+                                </div>
+                            </a>
+                            <a href="https://durable.co" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/durable.co" alt="Durable" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Durable</h4>
+                                    <p class="text-sm text-gray-500">Business Websites</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Resume Builders -->
+                    <div class="col-span-full mb-4">
+                        <h4 class="font-medium text-gray-700 mb-2">AI Resume Builders</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <a href="https://www.rezi.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/rezi.ai" alt="Rezi" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Rezi</h4>
+                                    <p class="text-sm text-gray-500">Resume Builder</p>
+                                </div>
+                            </a>
+                            <a href="https://www.kickresume.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/kickresume.com" alt="Kickresume" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Kickresume</h4>
+                                    <p class="text-sm text-gray-500">CV Creator</p>
+                                </div>
+                            </a>
+                            <a href="https://www.tealhq.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/tealhq.com" alt="Teal" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Teal</h4>
+                                    <p class="text-sm text-gray-500">Job Search</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Presentation Makers -->
+                    <div class="col-span-full mb-4">
+                        <h4 class="font-medium text-gray-700 mb-2">AI Presentation Makers</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <a href="https://www.beautiful.ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/beautiful.ai" alt="Beautiful.ai" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Beautiful.ai</h4>
+                                    <p class="text-sm text-gray-500">Presentation Design</p>
+                                </div>
+                            </a>
+                            <a href="https://www.slidesai.io" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/slidesai.io" alt="SlidesAI" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">SlidesAI</h4>
+                                    <p class="text-sm text-gray-500">Google Slides</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Email Assistants -->
+                    <div class="col-span-full mb-4">
+                        <h4 class="font-medium text-gray-700 mb-2">AI Email Assistants</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <a href="https://www.superhuman.com/ai" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/superhuman.com" alt="Superhuman AI" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Superhuman AI</h4>
+                                    <p class="text-sm text-gray-500">Email Client</p>
+                                </div>
+                            </a>
+                            <a href="https://www.flowrite.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/flowrite.com" alt="Flowrite" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Flowrite</h4>
+                                    <p class="text-sm text-gray-500">Email Writing</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Website Chatbots -->
+                    <div class="col-span-full">
+                        <h4 class="font-medium text-gray-700 mb-2">AI Website Chatbots</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <a href="https://www.tidio.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/tidio.com" alt="Tidio" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Tidio</h4>
+                                    <p class="text-sm text-gray-500">Live Chat</p>
+                                </div>
+                            </a>
+                            <a href="https://www.drift.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/drift.com" alt="Drift" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Drift</h4>
+                                    <p class="text-sm text-gray-500">Conversational AI</p>
+                                </div>
+                            </a>
+                            <a href="https://www.intercom.com" target="_blank" class="tool-card bg-white p-4 flex items-center hover:shadow-md">
+                                <img src="https://logo.clearbit.com/intercom.com" alt="Intercom AI" class="tool-logo rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Intercom AI</h4>
+                                    <p class="text-sm text-gray-500">Customer Support</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">AI Tools Hub</h3>
+                    <p class="text-gray-400">Discover the best AI applications for every need. Curated collection of the most useful artificial intelligence tools.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">General AI</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Text & Writing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Image Generation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Video & Animation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Tutorials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">AI News</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Submit a Tool</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-discord fa-lg"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-400">Subscribe to our newsletter</p>
+                        <div class="flex mt-2">
+                            <input type="email" placeholder="Your email" class="px-3 py-2 bg-gray-800 text-white rounded-l focus:outline-none w-full">
+                            <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r">Join</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 AI Tools Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const featuredSection = document.querySelector('.featured-section');
+            const allToolsContainer = document.getElementById('all-tools-container');
+            const toolCategoryBlocks = allToolsContainer ? Array.from(allToolsContainer.querySelectorAll('.tool-category-block')) : [];
+            const searchBox = document.querySelector('.search-box');
+            const allToolCards = document.querySelectorAll('main .tool-card'); // Includes featured cards (divs) and list cards (anchors)
+
+            const categoryMap = {
+                "All Tools": "All Tools", // Special case
+                "General AI": "General AI Assistants",
+                "Text & Writing": "Text Generation & Writing",
+                "Image Generation": "Image Generation",
+                "Video & Animation": "Video & Animation",
+                "Voice & Audio": "Voice, Speech & Audio",
+                "Coding": "Coding & Developer Tools",
+                "Productivity": "Productivity & Business",
+                "Education": "Education & Learning",
+                "Design": "Design & Branding",
+                "Specialized": "Specialized Tools"
+            };
+
+            const featuredCategories = ["General AI", "Image Gen", "Coding"]; // Text content of category tags in featured cards
+
+            function updateToolVisibility() {
+                const searchTerm = searchBox.value.toLowerCase();
+                const activeCategoryBtn = document.querySelector('.category-btn.active');
+                const activeCategoryName = activeCategoryBtn ? activeCategoryBtn.textContent.trim() : "All Tools";
+                const targetH3TextForCategory = categoryMap[activeCategoryName];
+
+                allToolCards.forEach(cardElement => {
+                    // cardElement is either a DIV (featured) or an A (list)
+                    let contentSourceElement = cardElement;
+                    if (cardElement.tagName === 'DIV' && cardElement.classList.contains('tool-card') && cardElement.querySelector('a > div.p-6')) {
+                        // For featured cards, content is deeper
+                        contentSourceElement = cardElement.querySelector('a > div.p-6');
+                    }
+
+                    const title = (contentSourceElement.querySelector('h3, h4')?.textContent || '').toLowerCase();
+                    const description = (contentSourceElement.querySelector('p.text-gray-600, p.text-sm.text-gray-500')?.textContent || '').toLowerCase();
+                    const featuredCategoryTag = (contentSourceElement.querySelector('span.px-3.py-1.rounded-full')?.textContent || '').toLowerCase();
+                    
+                    const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm) || (cardElement.closest('.featured-section') && featuredCategoryTag.includes(searchTerm));
+
+                    let isInActiveCategoryFilter = false;
+                    if (activeCategoryName === "All Tools") {
+                        isInActiveCategoryFilter = true;
+                    } else {
+                        if (cardElement.closest('.featured-section')) {
+                            // Map featured card tag to categoryMap keys or values for comparison
+                            // E.g., "Image Gen" tag on card needs to match "Image Generation" category button
+                            let normalizedFeaturedTag = featuredCategoryTag;
+                            if (featuredCategoryTag === "image gen") normalizedFeaturedTag = "image generation";
+                            // Add other normalizations if needed
+
+                            if (categoryMap[activeCategoryName]?.toLowerCase().includes(normalizedFeaturedTag)) {
+                                isInActiveCategoryFilter = true;
+                            }
+                        } else {
+                            const parentBlock = cardElement.closest('.tool-category-block');
+                            if (parentBlock && parentBlock.querySelector('h3')?.textContent.trim() === targetH3TextForCategory) {
+                                isInActiveCategoryFilter = true;
+                            }
+                        }
+                    }
+                    
+                    if (matchesSearch && isInActiveCategoryFilter) {
+                        cardElement.style.display = (cardElement.tagName === 'A') ? 'flex' : ''; // Reset to default for DIVs (grid item), flex for A
+                    } else {
+                        cardElement.style.display = 'none';
+                    }
+                });
+
+                // After filtering cards, adjust visibility of category blocks if "All Tools" is active
+                if (activeCategoryName === "All Tools") {
+                    if (featuredSection) {
+                        const hasVisibleFeaturedCards = Array.from(featuredSection.querySelectorAll('.tool-card')).some(card => card.style.display !== 'none');
+                        featuredSection.style.display = hasVisibleFeaturedCards ? 'block' : 'none';
+                    }
+                    toolCategoryBlocks.forEach(block => {
+                        const hasVisibleCardsInBlock = Array.from(block.querySelectorAll('.tool-card')).some(card => card.style.display !== 'none');
+                        block.style.display = hasVisibleCardsInBlock ? 'block' : 'none';
+                    });
+                }
+            }
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update button styles
+                    categoryBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.classList.remove('bg-indigo-100', 'text-indigo-800'); // In case it was the initial "All Tools" styling
+                        b.classList.add('bg-gray-100', 'text-gray-700');
+                    });
+                    btn.classList.remove('bg-gray-100', 'text-gray-700');
+                    btn.classList.add('active');
+
+                    const selectedCategoryText = btn.textContent.trim();
+                    const targetH3Text = categoryMap[selectedCategoryText];
+
+                    // Filter sections based on category
+                    if (featuredSection) {
+                         // Show featured section if "All Tools" or if the selected category matches any featured card's category tag
+                        let showFeatured = selectedCategoryText === "All Tools";
+                        if (!showFeatured) {
+                            const featuredCardTags = Array.from(featuredSection.querySelectorAll('.tool-card span.px-3.py-1.rounded-full'))
+                                .map(span => span.textContent.trim());
+                            if (featuredCardTags.some(tag => categoryMap[selectedCategoryText]?.toLowerCase().includes(tag.toLowerCase().replace(' gen', ' generation')))) {
+                                showFeatured = true;
+                            }
+                        }
+                        featuredSection.style.display = showFeatured ? 'block' : 'none';
+                    }
+
+                    if (selectedCategoryText === "All Tools") {
+                        toolCategoryBlocks.forEach(block => block.style.display = 'block');
+                    } else {
+                        toolCategoryBlocks.forEach(block => {
+                            const h3 = block.querySelector('h3');
+                            block.style.display = (h3 && h3.textContent.trim() === targetH3Text) ? 'block' : 'none';
+                        });
+                    }
+                    // Re-apply search and visibility logic
+                    updateToolVisibility();
+                });
+            });
+            
+            searchBox.addEventListener('input', updateToolVisibility);
+
+            // Initial call to set up visibility based on "All Tools" and any pre-filled search
+             if (document.querySelector('.category-btn.active').textContent.trim() === "All Tools") {
+                if (featuredSection) featuredSection.style.display = 'block';
+                toolCategoryBlocks.forEach(block => block.style.display = 'block');
+            }
+            updateToolVisibility();
+        });
+    </script>
+</body>
+</html>
